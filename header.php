@@ -22,4 +22,4 @@
         </nav>
     </div>
         <div class="container">
-            <div="principal">
+            <div class="principal">

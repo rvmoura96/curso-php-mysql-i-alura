@@ -1,10 +1,18 @@
 <?php include("header.php");?>
-    <h1>Formulário de cadastro</h1>
+    <h1 class="text-center">Formulario de produto</h1>
     <form action="add-product.php">
-        Nome:
-        <input type="text" name="name"><br/>
-        Preço:
-        <input type="number" name="price"><br/>
-        <input type="submit" value="Cadastrar">
+        <table class="table">
+            <tr>
+                <td>Produto</td>
+                <td><input type="text" class="form-control form-control-sm" name="name"></td>
+            </tr>
+            <tr>
+                <td>Preço do Produto</td>
+                <td><input type="number" class="form-control form-control-sm" name="price"></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-success">Cadastrar</button></td>
+            </tr>
+        </table>
     </form>
 <?php include("footer.php");?>
