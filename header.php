@@ -11,14 +11,17 @@
 <body>
     <div class="container">
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.php">Minha Loja</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="index.php">Minha Loja</a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="form-prod.php" class="nav-link">Cadastro de Produtos</a>
+                        <a class="nav-link" href="form-prod.php">Cadastro de Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="list-prod.php" class="nav-link">Exibir Produtos</a>
+                        <a class="nav-link" href="list-prod.php">Exibir Produtos</a>
                     </li>
                 </ul>
             </div>

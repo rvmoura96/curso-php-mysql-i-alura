@@ -1,11 +1,8 @@
-<?php include("header.php");?>
-<?php include("connect.php");?>
-<?php
+<?php include("header.php");
+include("connect.php");
+include("crud-prod.php"); ?>
 
-    function insertProduct($connection, $name, $price){
-        $query = "insert into produtos (name, preco) values ('{$name}', {$price})";
-        return mysqli_query($connection, $query);
-    }
+<?php
 
     $name = $_GET["name"];
     $price = $_GET["price"];
