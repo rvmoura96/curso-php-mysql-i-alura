@@ -9,6 +9,10 @@
 </head>
 
 <body>
-    <div class="container">
-        
-        <div="principal">
+    <nav class="navbar navbar-inverse bg-inverse">
+        <a href="index.php" class="navbar-brand">Minha Loja</a>
+    
+    </nav>
+
+        <div class="container">
+            <div="principal">

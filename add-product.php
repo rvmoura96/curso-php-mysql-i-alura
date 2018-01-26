@@ -1,13 +1,17 @@
 <?php include("header.php");?>
-    <?php
-        $name = $_GET["name"];
-        $price = $_GET["price"];
-        $connection = mysqli_connect('localhost', 'root', '', 'loja');
-        $query = "insert into produtos (name, preco) values ('{$name}', {$price})";
-        if(mysqli_query($connection, $query)){ ?>
-             <p class="alert-success">Produto <?=  $name; ?>, <?= $price;?> adicionado com sucesso!</p>
+<?php
+    function insertProduct(,$connection, $name, $price){
+    $query = "insert into produtos (name, preco) values ('{$name}', {$price})";
+    return mysqli_query($connection, $query);
+}
+    $name = $_GET["name"];
+    $price = $_GET["price"];
+    $connection = mysqli_connect('localhost', 'root', '', 'loja');
+    
+    if(insertProduct($connection, $name, $price)){ ?>
+        <p class="text-success">Produto <?=  $name; ?>, <?= $price;?> adicionado com sucesso!</p>
     <?php } else{ ?>
-            <p class="alert-danger">Produto <?=  $name; ?>, não foi  adicionado.</p>
+            <p class="text-danger">Produto <?=  $name; ?>, não foi  adicionado.</p>
     <?php
         }
     ?>
