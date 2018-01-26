@@ -9,10 +9,17 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse bg-inverse">
-        <a href="index.php" class="navbar-brand">Minha Loja</a>
-    
-    </nav>
-
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.php">Minha Loja</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="form-prod.php" class="nav-link">Cadastro de Produtos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
         <div class="container">
             <div="principal">
