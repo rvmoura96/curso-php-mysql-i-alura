@@ -17,6 +17,9 @@
                     <li class="nav-item">
                         <a href="form-prod.php" class="nav-link">Cadastro de Produtos</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="list-prod.php" class="nav-link">Exibir Produtos</a>
+                    </li>
                 </ul>
             </div>
         </nav>

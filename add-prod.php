@@ -1,4 +1,5 @@
 <?php include("header.php");?>
+<?php include("connect.php");?>
 <?php
 
     function insertProduct($connection, $name, $price){
@@ -8,7 +9,6 @@
 
     $name = $_GET["name"];
     $price = $_GET["price"];
-    $connection = mysqli_connect('localhost', 'root', '', 'loja');
     
     if(insertProduct($connection, $name, $price)){ ?>
         <p class="text-success">Produto <?=  $name; ?>, <?= $price;?> adicionado com sucesso!</p>

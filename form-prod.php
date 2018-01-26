@@ -1,6 +1,6 @@
 <?php include("header.php");?>
     <h1 class="text-center">Formulario de produto</h1>
-    <form action="add-product.php">
+    <form action="add-prod.php">
         <table class="table">
             <tr>
                 <td>Produto</td>
