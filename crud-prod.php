@@ -10,7 +10,7 @@ function listProducts($connection){
 }
 
 function insertProduct($connection, $name, $price){
-    $query = "insert into produtos (name, preco) values ('{$name}', {$price})";
+    $query = "insert into produtos (name, price) values ('{$name}', {$price})";
     return mysqli_query($connection, $query);
 }
 

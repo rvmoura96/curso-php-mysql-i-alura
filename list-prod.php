@@ -17,7 +17,7 @@ include("crud-prod.php");?>
 
         <tr>
             <td><?=$product['name']?></td>
-            <td><?=$product['preco']?></td>
+            <td><?=$product['price']?></td>
             <td><a href="remove-prod.php?id=<?=$product['id']?>" class="text-danger">Remover</a></td>
         </tr>
     <?php
