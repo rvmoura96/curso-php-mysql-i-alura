@@ -4,6 +4,6 @@ include("crud-prod.php");
 
 $id = $_GET['id'];
 deleteProduct($connection, $id);
-header("Location:list-prod.php");
+header("Location:list-prod.php?removed=true");
+die();
 ?>
-<?php include("footer.php");?>

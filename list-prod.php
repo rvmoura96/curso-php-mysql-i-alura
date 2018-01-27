@@ -2,6 +2,14 @@
 include("connect.php");
 include("crud-prod.php");?>
 
+<?php
+    if(array_key_exists('removed', $_GET) && $_GET['removed']=='true'){
+?>
+    <p class="alert-success">Produto removido com sucesso!</p>
+<?php
+    }
+?>
+
 <table class="table table-hover">
     <tr>
         <th>Produto</th>
@@ -14,7 +22,6 @@ include("crud-prod.php");?>
     <?php
         foreach($products as $product):
     ?>
-
         <tr>
             <td><?=$product['name']?></td>
             <td><?=$product['price']?></td>
