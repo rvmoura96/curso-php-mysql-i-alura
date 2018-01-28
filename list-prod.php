@@ -9,12 +9,15 @@ include("crud-prod.php");?>
 <?php
     }
 ?>
-
+<meta charset="UTF-8">
 <table class="table table-hover">
     <tr>
         <th>Produto</th>
         <th>Valor</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
         <th></th>
+
     </tr>
     <?php
         $products = listProducts($connection);
@@ -25,7 +28,14 @@ include("crud-prod.php");?>
         <tr>
             <td><?=$product['name']?></td>
             <td><?=$product['price']?></td>
-            <td><a href="remove-prod.php?id=<?=$product['id']?>" class="text-danger">Remover</a></td>
+            <td><?=substr($product['description'], 0, 40);?></td>
+            <td><?=$product['name_category']?></td>
+            <td>
+                <form action="remove-prod.php" method="post">
+                    <input type="hidden" name="id" value="<?=$product['id']?>">
+                    <button class="btn btn-danger" type="submit">Remover</button>
+                </form>
+            </td>
         </tr>
     <?php
         endforeach
