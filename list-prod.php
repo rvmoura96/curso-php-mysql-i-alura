@@ -16,6 +16,8 @@ include("crud-prod.php");?>
         <th>Valor</th>
         <th>Descrição</th>
         <th>Categoria</th>
+        <th>Status</th>
+        <th></th>
         <th></th>
 
     </tr>
@@ -30,6 +32,11 @@ include("crud-prod.php");?>
             <td><?=$product['price']?></td>
             <td><?=substr($product['description'], 0, 40);?></td>
             <td><?=$product['name_category']?></td>
+            <td><?php if($product['used']==true){ echo "Usado"; } 
+                      else{ echo "Novo"; }
+                    ?>
+            </td>
+            <td><a href="update-prod-form.php?id=<?=$product['id'];?>" class="btn btn-primary">Editar</a></td>
             <td>
                 <form action="remove-prod.php" method="post">
                     <input type="hidden" name="id" value="<?=$product['id']?>">

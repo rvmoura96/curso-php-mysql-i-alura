@@ -20,15 +20,19 @@
                 <td><textarea class="form-control form-control-sm" name="description" ></textarea></td>
             </tr>
             <tr>
+                <td></td>
+                <td><input type="checkbox" name="used" value="true"> Usado</td>
+            </tr>
+            <tr>
                 <td>Categoria</td>
                 <td>
-                <?php 
-                    foreach($categories as $category):
-                ?>
-                    <input type="radio" name="id_category" value="<?=$category['id']?>"><?=$category['name']?><br/>
-                <?php 
-                    endforeach 
-                ?>
+                <select class="form-control" name="id_category" >
+                <?php foreach($categories as $category): ?>
+                    <option value="<?=$category['id']?>">
+                            <?=$category['name']?>
+                    </option>
+                <?php endforeach ?>
+                </select>
                 </td>
             </tr>
             <tr>

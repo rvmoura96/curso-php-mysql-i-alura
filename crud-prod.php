@@ -9,8 +9,19 @@ function listProducts($connection){
     return $products;
 }
 
-function insertProduct($connection, $name, $price, $description, $id_category){
-    $query = "insert into produtos (name, price, description, id_category) values ('{$name}', {$price}, '{$description}', {$id_category})";
+function selectProduct($connection, $id){
+    $query = "select * from produtos where id = {$id}";
+    $result = mysqli_query($connection, $query);
+    return mysqli_fetch_assoc($result);
+}
+
+function updateProduct($connection, $id, $name, $price, $description, $id_category, $used){
+    $query = "update produtos set name='{$name}', price={$price}, description='{$description}', id_category={$id_category}, used={$used} where id={$id}";
+    return mysqli_query($connection, $query);
+}
+
+function insertProduct($connection, $name, $price, $description, $id_category, $used){
+    $query = "insert into produtos (name, price, description, id_category, used) values ('{$name}', {$price}, '{$description}', {$id_category}, {$used})";
     return mysqli_query($connection, $query);
 }
 

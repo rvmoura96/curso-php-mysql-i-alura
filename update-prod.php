@@ -2,6 +2,7 @@
 include("connect.php");
 include("crud-prod.php");
 
+$id = $_POST["id"];
 $name = $_POST["name"];
 $price = $_POST["price"];
 $description = $_POST["description"];
@@ -11,12 +12,12 @@ if(array_key_exists('used', $_POST)){
 } else {
     $used = "false";
 }
-    
-if(insertProduct($connection, $name, $price, $description, $id_category, $used)){ ?>
-    <p class="text-success">Produto <?=  $name; ?>, <?= $price;?> adicionado com sucesso!</p>
+
+if(updateProduct($connection, $id, $name, $price, $description, $id_category, $used)){ ?>
+    <p class="text-success">Produto <?=  $name; ?>, <?= $price;?> alterado com sucesso!</p>
 <?php } else { 
     $msg = mysqli_error($connection);
-?>  <p class="text-danger">Produto <?=  $name; ?>, não foi  adicionad:<?= $msg?></p>
+?>  <p class="text-danger">Produto <?=  $name; ?>, não foi  alterado:<?= $msg?></p>
 <?php
     }
 ?>
