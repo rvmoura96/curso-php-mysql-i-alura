@@ -1,13 +1,17 @@
 <?php include("header.php");
+include("user-logic.php");   
     if(isset($_GET["login"]) && $_GET["login"]==true) { ?>
         <p class="alert-success">Logado com sucesso</p>
     <?php } ?>
     <?php if(isset($_GET["login"]) && $_GET["login"]==false) { ?>    
         <p class="alert-danger">Login ou senha inválidos</p>
     <?php }?>
+    <?php if(isset($_GET["secFlaw"]) && $_GET["secFlaw"]==true){ ?>
+        <p class="alert-danger"> Você não possui acesso a tal funcionalidade!</p>
+    <?php }?>
         <h1 class="text-center">Bem Vindo</h1>
-    <?php if(isset($_COOKIE["logged_user"])) {?>
-        <p class="text-success">Você está logado como <?=$_COOKIE["logged_user"]?>.</p>
+    <?php if(isLogged()) {?>
+        <p class="text-success">Você está logado como <?=loggedUser();?>.</p>
     <?php } else {?>
             <h2 class="text-center">Login</h2>
             <form method="post" action="login.php">

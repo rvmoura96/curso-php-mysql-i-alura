@@ -1,7 +1,9 @@
 <?php include("header.php");
 include("connect.php");
 include("crud-prod.php");
+include("user-logic.php");
 
+validateUser();
 $name = $_POST["name"];
 $price = $_POST["price"];
 $description = $_POST["description"];

@@ -1,8 +1,11 @@
 <?php include("header.php");
-      include("connect.php");
-      include("crud-category.php");
-      
-      $categories = listCategories($connection);
+include("connect.php");
+include("crud-category.php");
+include("user-logic.php");
+
+validateUser();
+  
+$categories = listCategories($connection);
 ?>
     <h1 class="text-center">Formulario de produto</h1>
     <form method="post" action="add-prod.php">
