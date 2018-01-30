@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 function isLogged(){
-    return isset($_COOKIE["logged_user"]);
+    return isset($_SESSION["logged_user"]);
 }
 
 function validateUser(){
@@ -12,9 +12,13 @@ function validateUser(){
 }
 
 function loggedUser(){
-    return $_COOKIE["logged_user"];
+    return $_SESSION["logged_user"];
 }
 
 function userLogin($check){
-    setcookie("logged_user", $check);
+    $_SESSION["logged_user"] = $check;
+}
+
+function logout(){
+    session_destroy();
 }

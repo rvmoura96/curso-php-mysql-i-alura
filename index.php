@@ -3,6 +3,9 @@ include("user-logic.php");
     if(isset($_GET["login"]) && $_GET["login"]==true) { ?>
         <p class="alert-success">Logado com sucesso</p>
     <?php } ?>
+    <?php if(isset($_GET["logout"]) && $_GET["logout"]==true) { ?>
+        <p class="alert-success">Deslogado com sucesso!</p>
+    <?php } ?>
     <?php if(isset($_GET["login"]) && $_GET["login"]==false) { ?>    
         <p class="alert-danger">Login ou senha inválidos</p>
     <?php }?>
@@ -11,7 +14,7 @@ include("user-logic.php");
     <?php }?>
         <h1 class="text-center">Bem Vindo</h1>
     <?php if(isLogged()) {?>
-        <p class="text-success">Você está logado como <?=loggedUser();?>.</p>
+        <p class="text-success">Você está logado como <?=loggedUser();?>. <a href="logout.php">Deslogar</a></p>
     <?php } else {?>
             <h2 class="text-center">Login</h2>
             <form method="post" action="login.php">
