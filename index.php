@@ -1,17 +1,15 @@
 <?php include("header.php");
 include("user-logic.php");   
-    if(isset($_GET["login"]) && $_GET["login"]==true) { ?>
-        <p class="alert-success">Logado com sucesso</p>
-    <?php } ?>
-    <?php if(isset($_GET["logout"]) && $_GET["logout"]==true) { ?>
-        <p class="alert-success">Deslogado com sucesso!</p>
-    <?php } ?>
-    <?php if(isset($_GET["login"]) && $_GET["login"]==false) { ?>    
-        <p class="alert-danger">Login ou senha inválidos</p>
-    <?php }?>
-    <?php if(isset($_GET["secFlaw"]) && $_GET["secFlaw"]==true){ ?>
-        <p class="alert-danger"> Você não possui acesso a tal funcionalidade!</p>
-    <?php }?>
+    if(isset($_SESSION["success"])) { ?>
+        <p class="alert-success"><?=$_SESSION["success"];?></p>
+    <?php 
+        unset($_SESSION["success"]);
+    } ?>
+    <?php if(isset($_SESSION["danger"])){ ?>
+        <p class="alert-danger"><?=$_SESSION["danger"];?></p>
+    <?php 
+    unset($_SESSION["danger"]);
+    }?>
         <h1 class="text-center">Bem Vindo</h1>
     <?php if(isLogged()) {?>
         <p class="text-success">Você está logado como <?=loggedUser();?>. <a href="logout.php">Deslogar</a></p>

@@ -1,14 +1,13 @@
 <?php include("header.php");
 include("connect.php");
-include("crud-prod.php");?>
-
+include("crud-prod.php");
+include("user-logic.php");?>
 <?php
-    if(array_key_exists('removed', $_GET) && $_GET['removed']=='true'){
-?>
-    <p class="alert-success">Produto removido com sucesso!</p>
-<?php
-    }
-?>
+    if(isset($_SESSION["success"])) { ?>
+        <p class="alert-success"><?=$_SESSION["success"];?></p>
+<?php 
+    unset($_SESSION["success"]);
+} ?>
 <meta charset="UTF-8">
 <table class="table table-hover">
     <tr>

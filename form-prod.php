@@ -4,7 +4,6 @@ include("crud-category.php");
 include("user-logic.php");
 
 validateUser();
-  
 $categories = listCategories($connection);
 ?>
     <h1 class="text-center">Formulario de produto</h1>

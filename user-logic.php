@@ -4,9 +4,10 @@ function isLogged(){
     return isset($_SESSION["logged_user"]);
 }
 
-function validateUser(){
-    if(!isLogged()){
-        header("Location: index.php?secFlaw=true");
+function validateUser() {
+    if(!isLogged() ){
+        $_SESSION["danger"] = "Você não tem acesso a esta funcionalidade.";
+        header("Location: index.php");
         die();
     }
 }
@@ -21,4 +22,5 @@ function userLogin($check){
 
 function logout(){
     session_destroy();
+    session_start();
 }

@@ -8,9 +8,11 @@ $password = $_POST["password"];
 $check = checkUser($connection, $user, $password);
 
 if($check==null){
-    header("Location: index.php?login=0");
+    $_SESSION["danger"] = "Usuário ou senha inválida.";
+    header("Location: index.php");
 } else {
+    $_SESSION["success"] = "Logado com sucesso.";
     userLogin($check["email"]);
-    header("Location: index.php?login=1");
+    header("Location: index.php?");
 } 
 die();
